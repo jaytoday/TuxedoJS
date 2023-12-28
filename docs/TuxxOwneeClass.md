@@ -23,8 +23,9 @@
   <li><a href="#TuxxOwneeClass-Guidelines">TuxxOwneeClass Guidelines</a>
   <li><a href="#TuxxOwneeClass-Complete-Example">TuxxOwneeClass Complete Example</a>
 </ol>
+
 ## <a id="Premise"></a>Premise [#](#Premise)
->The `OwneeClass` is an opinionated [React](http://facebook.github.io/react/) class that is not designed to manage any of its own state other than, in some cases, necessary state to implement two-way data-binding for input validation. Instead the `OwneeClass` uses dynamic properties passed down by `props` as per the normal `React` workflow, and static properties and methods shared automatically by the nearest parent `OwnerClass` component. The `OwnerClass` shares these properties and methods with the `OwneeClass` without having to cascade those properties down as per the usual `React` workflow.
+>The `OwneeClass` is an opinionated [React](http://facebook.github.io/react) class that is not designed to manage any of its own state other than, in some cases, necessary state to implement two-way data-binding for input validation. Instead the `OwneeClass` uses dynamic properties passed down by `props` as per the normal `React` workflow, and static properties and methods shared automatically by the nearest parent `OwnerClass` component. The `OwnerClass` shares these properties and methods with the `OwneeClass` without having to cascade those properties down as per the usual `React` workflow.
 
 ***
 
@@ -112,8 +113,8 @@ Allows you to perform prop validation on the `nearestOwnerProps` object on this 
 
 ```javascript
     owneeClassProps.nearestOwnerPropTypes = {
-      deleteMessage: React.PropTypes.function.isRequired,
-      editMessage: React.PropTypes.function.isRequired,
+      deleteMessage: React.PropTypes.func.isRequired,
+      editMessage: React.PropTypes.func.isRequired,
     };
 ```
 
@@ -123,8 +124,8 @@ Allows you to perform prop validation on both the standard `props` of a componen
 ```javascript
     owneeClassProps.anyPropTypes = {
       message: React.PropTypes.object.isRequired,
-      deleteMessage: React.PropTypes.function.isRequired,
-      editMessage: React.PropTypes.function.isRequired
+      deleteMessage: React.PropTypes.func.isRequired,
+      editMessage: React.PropTypes.func.isRequired
     };
 ```
 
@@ -193,8 +194,8 @@ Taking all that we have learned so far let's take a look at a more realistic exa
       },
 
       nearestOwnerPropTypes: {
-        deleteMessage: React.PropTypes.function.isRequired,
-        editMessage: React.PropTypes.function.isRequired
+        deleteMessage: React.PropTypes.func.isRequired,
+        editMessage: React.PropTypes.func.isRequired
       },
 
       getInitialState: function () {
